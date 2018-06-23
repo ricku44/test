@@ -71,7 +71,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			// console.log(result.search("Save link as"));
 			// console.log(result.search("divDownload"));
 
-			var data = $(result).find("divDownload");  // download data
+			var data = $(result).find("#divDownload");  // download data
 			var links = $(data[0]).find("a");
 
 			console.log(links);
