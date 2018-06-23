@@ -15,6 +15,7 @@ $.ajaxSetup({async:false});
 $.getScript(rootUrl + "/Scripts/asp.js");
 
 console.log('Starting ' + siteName + ' Batch Downloader script...');
+console.log('episodeLinks');
 
 var startEpisode;
 do {
@@ -62,7 +63,7 @@ console.log('Starting to fetch links..');
 for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEpisode); i--) {
 	console.log('Fetching listing ' + (episodeLinks.length - i) + ' [' + episodeNames[i] + ']');
 	jQuery.ajax({
-		url: episodeLinks[i], 
+		url: URL + episodeLinks[i], 
 		tryCount : 0,
 		retryLimit : 3,
 		success: function(result) {
@@ -88,9 +89,12 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 					// console.log(el);
 					if ( $(el).html().search(quals[j]) > -1 ){
 						long_url = $(el).attr('href');
+						console.log(long_url);
+						
 						name = getDownloadName(episodeNames[i], $(el).html());
 						if (opOptions == "1"){
 							linkStr += encodeURI(long_url) + " " + name + "\n";
+							console.log(linkStr);
 						} else if (opOptions == "2"){
 							linkStr += '<a href="' + long_url + '" download="' + name + '">' + name + '</a><br>';
 						} else {
