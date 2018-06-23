@@ -15,7 +15,7 @@ $.ajaxSetup({async:false});
 $.getScript(rootUrl + "/Scripts/asp.js");
 
 console.log('Starting ' + siteName + ' Batch Downloader script...');
-console.log(episodeLinks);
+console.log('link' + episodeLinks);
 
 var startEpisode;
 do {
