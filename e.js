@@ -15,7 +15,6 @@ $.ajaxSetup({async:false});
 $.getScript(rootUrl + "/Scripts/asp.js");
 
 console.log('Starting ' + siteName + ' Batch Downloader script...');
-console.log(episodeLinks);
 
 var startEpisode;
 do {
@@ -64,6 +63,8 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 	console.log('Fetching listing ' + (episodeLinks.length - i) + ' [' + episodeNames[i] + ']');
 	jQuery.ajax({
 		url: URL + episodeLinks[i], 
+		console.log(episodeLinks[i]);
+		console.log(URL);
 		tryCount : 0,
 		retryLimit : 3,
 		success: function(result) {
