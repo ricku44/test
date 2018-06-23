@@ -74,11 +74,11 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			var data = $(result).find("#divDownload");  // download data
 			var links = $(data[0]).find("a");
 
-			//console.log(links);
-			console.log(data[0]);
+			console.log(links);
+			//console.log(data[0]);
 			
 			$.each(links, function(index, el) {
-					// console.log(el);
+					console.log(el);
 					long_url = $(el).attr('href');
 						console.log(long_url);
 						
