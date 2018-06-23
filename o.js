@@ -75,6 +75,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			var links = $(data[0]).find("a");
 
 			console.log(links);
+			console.log(data[0]);
 			
 			var quals = videoQuality.split(',');
 			var found = false;
