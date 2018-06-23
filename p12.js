@@ -77,18 +77,9 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			//console.log(links);
 			console.log(data[0]);
 			
-			var quals = videoQuality.split(',');
-			var found = false;
-			// pick download
-			for (var j=0; j<quals.length; j++){
-				// check if the format exists or not
-				if (found)
-					return;
-
-				$.each(links, function(index, el) {
+			$.each(links, function(index, el) {
 					// console.log(el);
-					if ( $(el).html().search(quals[j]) > -1 ){
-						long_url = $(el).attr('href');
+					long_url = $(el).attr('href');
 						console.log(long_url);
 						
 						name = getDownloadName(episodeNames[i], $(el).html());
@@ -103,9 +94,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 						found = true;
 						// console.log('Episode ' + (episodeLinks.length - i));
 						console.log(long_url);
-					}
 				});
-			}
 			// successful response processed
 		},
 		error: function(xhr, textStatus, errorThrown ) {
