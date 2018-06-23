@@ -74,7 +74,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			var data = $(result).find("#divDownload");  // download data
 			var links = $(data[0]).find("a");
 
-			console.log(links);
+			//console.log(links);
 			console.log(data[0]);
 			
 			var quals = videoQuality.split(',');
