@@ -38,11 +38,11 @@ do {
 
 var videoQuality = prompt(
 	"Enter video quality preferences for the download. Example - '720,480'\nThis first looks for 720p, if 720 is not available, it picks 480.", 
-	defaultText="720,480"
+	defaultText=""
 );
 
 if (videoQuality == null){
-	videoQuality = "720,480,360";
+	videoQuality = "720";
 }
 
 var opOptions = prompt(
@@ -74,15 +74,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 			var data = $(result).find("#divDownload");  // download data
 			var links = $(data[0]).find("a");
 
-			if (data == null || data == "" || data.length == 0){ // captcha maybe
-				console.log("Captcha detected at " + URL + episodeLinks[i]);
-				prompt("Captcha detected. Solve it by opening the link below in a new tab. After solving, press OK.",
-					defaultText=URL + episodeLinks[i]);
-				this.tryCount++;
-				$.ajax(this);  // retry
-				return;
-			}
-			// console.log(links);
+			console.log(data);
 			
 			var quals = videoQuality.split(',');
 			var found = false;
