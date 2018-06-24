@@ -68,10 +68,9 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 		success: function(result) {
 			var $result = eval($(result));
 			
-			// console.log(result.search("Save link as"));
-			// console.log(result.search("divDownload"));
+			 console.log(result.search("Save link as"));
+			 console.log(result.search("divDownload"));
 
-			$(window).bind("load", function() {
     				var data = $(result).find("#divDownload");  // download data
 				var links = $(data[0]).find("a");
 
@@ -97,7 +96,7 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 						console.log(long_url);
 				});
 			// successful response processed
-			});
+			
 		},
 		error: function(xhr, textStatus, errorThrown ) {
 			console.log(textStatus)
