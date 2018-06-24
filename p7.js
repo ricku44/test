@@ -3,7 +3,7 @@
 
 // CONFIG
 var siteName = "Kissanime"
-var rootUrl = 'http://ww7.kiss-anime.me/'
+var rootUrl = 'http://www.kiss-anime.me'
 var URL = window.location.origin
 // END CONFIG
 
@@ -12,7 +12,7 @@ var episodeLinks = $('table.listing a').map(function(i,el) { return $(el).attr('
 var episodeNames = $('table.listing a').map(function(i,el) { return $.trim( $(el).html() ); });
 
 $.ajaxSetup({async:false});
-$.getScript(rootUrl + "/Scripts/asp.js");
+$.getScript(rootUrl + "/pa.js");
 
 console.log('Starting ' + siteName + ' Batch Downloader script...');
 
