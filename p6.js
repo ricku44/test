@@ -68,15 +68,18 @@ for (i = (episodeLinks.length - startEpisode); i >= (episodeLinks.length - endEp
 		success: function(result) {
 			var $result = eval($(result));
 			
-			 console.log(result.search("Save link as"));
-			 console.log(result.search("divDownload"));
+			 //console.log(result.search("Save link as"));
+			 //console.log(result.search("divDownload"));
 
     				var data = $(result).find("#divDownload");  // download data
 				var links = $(data[0]).find("a");
 
 				console.log(links);
 				//console.log(data[0]);
-			
+				do{
+					data = $(result).find("#divDownload");
+					links = $(data[0]).find("a");
+				} while(data.length==0);
 				$.each(links, function(index, el) {
 					console.log(el);
 					long_url = $(el).attr('href');
